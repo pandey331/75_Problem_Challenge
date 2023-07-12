@@ -1,0 +1,35 @@
+class Solution {
+public:
+    vector<vector<int>> threeSum(vector<int>& nums) {
+        vector<vector<int>>ans;
+        set<vector<int>>s;
+        int l,r=nums.size()-1;
+           
+        for(int i=0;i<nums.size();i++)
+        {
+            l=i;
+            if(nums[i]+nums[l]+nums[r]==0)
+            {
+                vector<int>v= {nums[i],nums[l],nums[r]};
+                s.insert(v);
+                l++;
+                r--;
+            }
+            if(nums[i] + nums[l] + nums[r] < 0)
+            {
+                l++;
+            }
+            else
+            {
+                r--;
+            }
+        }
+        for(auto x:s)
+        {
+            ans.push_back(s);
+        }
+        return ans;
+        
+        
+    }
+};
